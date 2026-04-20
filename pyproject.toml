@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beyond-bellman-ctpe"
+version = "0.1.0"
+description = "Experiment code for high-order generator regression in continuous-time policy evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "Yaowei Zheng"},
+  {name = "Richong Zhang"},
+  {name = "Shenxi Wu"},
+  {name = "Shirui Bian"},
+  {name = "Haosong Zhang"},
+  {name = "Li Zeng"},
+  {name = "Xingjian Ma"},
+  {name = "Yichi Zhang"}
+]
+dependencies = [
+  "numpy>=1.24",
+  "matplotlib>=3.6",
+  "pandas>=2.0",
+  "plotly>=5.0"
+]
+
+[project.scripts]
+ctpe-reproduce-stage3 = "ctpe.reproduce_stage3:main"
+ctpe-reproduce-stage4 = "ctpe.reproduce_stage4_local:main"
+ctpe-reproduce-stage5 = "ctpe.reproduce_stage5:main"
+ctpe-reproduce-all = "ctpe.reproduce_all:main"
+ctpe-journal-benchmark = "ctpe.run_journal_benchmark:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
